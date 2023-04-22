@@ -5,402 +5,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/purple_50">
+    android:gravity="center"
+    tools:context=".MainActivity">
 
-    <View
+    <ImageView
+        android:id="@+id/id_profil_resmi"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/icon_kisi">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/id_bilgilendirme_mesajı"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_weight="1">
-    </View>
+        android:layout_height="50dp"
+        android:text=""
+        android:gravity="center"
+        android:textSize="25dp">
+    </TextView>
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/id_kimlik_numarası"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:layout_height="60dp"
+        android:drawableStart="@drawable/custom_icon_kimlik"
+        android:background="@drawable/custom_edit_text"
+        android:hint="T.C. Kimlik No"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:inputType="numberSigned">
+    </EditText>
 
-        <TextView
-            android:id="@+id/textview"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:background="@drawable/customize_textview"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="50dp">
-        </TextView>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+    </Space>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="15dp">
-        </View>
+    <AbsoluteLayout
+        android:id="@+id/id_absolute_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
 
         <EditText
-            android:id="@+id/işlemEkranı_Edt_Txt"
+            android:id="@+id/id_şifre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:autofillHints="false"
-            android:background="@drawable/customize_textview"
-            android:inputType="none"
-            android:paddingStart="50dp"
-            android:paddingRight="50dp"
-            android:paddingBottom="50dp"
-            android:textAlignment="textEnd"
-            android:textColor="@color/black">
+            android:layout_height="60dp"
+            android:drawableStart="@drawable/custom_icon_sifre"
+            android:background="@drawable/custom_edit_text"
+            android:hint="Şifre"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:inputType="numberPassword">
         </EditText>
-    </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_weight="3">
-    </View>
+        <ImageButton
+            android:id="@+id/id_göz"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_x="360dp"
+            android:layout_y="10dp"
+            android:background="@drawable/icon_goz"
+            android:onClick="seçildi"></ImageButton>
+    </AbsoluteLayout>
 
-    <ImageButton
-        android:id="@+id/silme_Btn"
-        android:layout_width="90dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:layout_gravity="end"
-        android:layout_marginStart="6dp"
-        android:layout_marginEnd="6dp"
-        android:backgroundTint="@color/purple_50"
-        android:onClick="butonTiklama"
-        android:src="@drawable/ic_baseline_backspace_24">
-    </ImageButton>
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/id_beni_hatırla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Beni Hatırla">
+    </androidx.appcompat.widget.SwitchCompat>
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/c_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/red"
-                android:text="C"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginStart="6dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/us_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/teal_200"
-                android:text="^"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/yüzde_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/teal_200"
-                android:text="%"
-                android:textColor="@color/black"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/bölüm_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/teal_700"
-                android:text="/"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/yedi_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="7"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/sekiz_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="8"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/dokuz_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="9"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/çarpım_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/teal_700"
-                android:text="*"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/dört_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="4"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/beş_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="5"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/altı_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="6"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/eksi_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/teal_700"
-                android:text="-"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/bir_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="1"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/iki_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:onClick="butonTiklama"
-                android:text="2"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp" />
-
-            <Button
-                android:id="@+id/üç_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="3"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/artı_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/teal_700"
-                android:text="+"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/üçSıfır_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="000"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/sıfır_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="0"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/nokta_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/purple_200"
-                android:text="."
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-
-            <Button
-                android:id="@+id/eşittir_Btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/green"
-                android:text="="
-                android:textSize="30sp"
-                app:cornerRadius="90dp"
-                app:strokeColor="@color/black"
-                app:strokeWidth="3dp"
-                android:onClick="butonTiklama"/>
-        </TableRow>
-    </TableLayout>
+    <Button
+        android:id="@+id/id_btn_giriş"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/purple_200"
+        app:cornerRadius="50dp"
+        android:onClick="seçildi"
+        android:text="Giriş Yap">
+    </Button>
 </LinearLayout>

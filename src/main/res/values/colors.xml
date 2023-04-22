@@ -7,8 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red">#DC1111</color>
-    <color name="green">#13B607</color>
-    <color name="yellow">#D4FFA2</color>
-    <color name="purple_50">#ECDEFD</color>
+    <color name="açık_yeşil">#6AEF6F</color>F67066
+    <color name="açık_kırmızı">#F67066</color>
 </resources>
